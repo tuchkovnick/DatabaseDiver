@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using DbDiver.Core;
 using Prism.Interactivity;
 using Prism.Ioc;
 using Prism.Mvvm;
