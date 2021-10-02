@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DatabasePath>D:\TestDatabase\DbDiverTest.db</DatabasePath>
+  <Parameters>
+    <DbSearchParameter>
+      <TableName>Users</TableName>
+      <ColumnName>FirstName</ColumnName>
+      <SearchItem>Nick</SearchItem>
+      <Description>Description1</Description>
+      <Status>Found</Status>
+    </DbSearchParameter>
+    <DbSearchParameter>
+      <TableName>NewUsers</TableName>
+      <ColumnName>LastName</ColumnName>
+      <SearchItem>Ivanov</SearchItem>
+      <Description>Description2</Description>
+      <Status>Found</Status>
+    </DbSearchParameter>
+    <DbSearchParameter>
+      <TableName>NewUsers</TableName>
+      <ColumnName>FirstName</ColumnName>
+      <SearchItem>Vasya</SearchItem>
+      <Description>Description3</Description>
+      <Status>Not found</Status>
+    </DbSearchParameter>
+    <DbSearchParameter>
+      <TableName>UnexistedUsers</TableName>
+      <ColumnName>FirstName</ColumnName>
+      <SearchItem>Peter</SearchItem>
+      <Description>Description4</Description>
+      <Status>Error</Status>
+    </DbSearchParameter>
+  </Parameters>
+</Settings>

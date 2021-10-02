@@ -1,0 +1,5 @@
+C:\Users\tuchk\source\repos\DbDiver.Core\bin\Debug\DbDiver.Core.dll
+C:\Users\tuchk\source\repos\DbDiver.Core\bin\Debug\DbDiver.Core.pdb
+C:\Users\tuchk\source\repos\DbDiver.Core\obj\Debug\DbDiver.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\tuchk\source\repos\DbDiver.Core\obj\Debug\DbDiver.Core.dll
+C:\Users\tuchk\source\repos\DbDiver.Core\obj\Debug\DbDiver.Core.pdb
