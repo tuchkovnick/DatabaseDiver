@@ -11,6 +11,7 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Windows;
 
@@ -75,6 +76,8 @@ namespace DbDiver.Modules.ViewModels
             DiveCommand = new DelegateCommand(Dive);
             SearchParameters = new ObservableCollection<DbSearchParameter>();
             BrowseCommand = new DelegateCommand(BrowseSqlFile);
+            SaveItemsCommand = new DelegateCommand(SaveItems);
+            LoadItemsCommand = new DelegateCommand(LoadItems);
             Settings settings = new Settings();
             try
             {
@@ -100,15 +103,7 @@ namespace DbDiver.Modules.ViewModels
 
         private void AddItem()
         {
-            SearchParameters.Add(
-                new DbSearchParameter()
-                {
-                    ColumnName = this.ColumnName,
-                    TableName = this.TableName,
-                    SearchItem = this.SearchItem,
-                    Description = this.Description
-                }
-            );
+            SearchParameters.Add(new DbSearchParameter(ColumnName, TableName, SearchItem, Description));
         }
 
         private void BrowseSqlFile()
@@ -130,6 +125,9 @@ namespace DbDiver.Modules.ViewModels
         public DelegateCommand DiveCommand { get; private set; }
 
         public DelegateCommand BrowseCommand { get; private set; }
+
+        public DelegateCommand LoadItemsCommand { get;private set; }
+        public DelegateCommand SaveItemsCommand { get; private set; }
 
         public ObservableCollection<DbSearchParameter> SearchParameters { set; get; }
 
@@ -155,6 +153,18 @@ namespace DbDiver.Modules.ViewModels
             }
             RaisePropertyChanged("SearchParameters");
             _eventAggregator.GetEvent<ProgramStoppedEvent>().Publish();
+        }
+
+
+        private void LoadItems()
+        {
+            SearchParameters = new ObservableCollection<DbSearchParameter>(ItemsLoader.LoadItems());
+            RaisePropertyChanged("SearchParameters");
+        }
+
+        private void SaveItems()
+        {
+            ItemsLoader.SaveItems(SearchParameters);
         }
 
         public void SetStatusNotSearched()

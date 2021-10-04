@@ -16,6 +16,15 @@ namespace DbDiver.Core
         private string _description;
         private string _status = "Not searched";
 
+        public DbSearchParameter() { }
+        public DbSearchParameter(string tableName, string columnName, string searchItem, string description)
+        {
+            TableName = tableName;
+            ColumnName = columnName;
+            SearchItem = searchItem;
+            Description = description;
+        }
+
         [DisplayName("Table name")]
         public string TableName { get => _tableName; set { _tableName = value; OnPropertyChanged(); } }
 

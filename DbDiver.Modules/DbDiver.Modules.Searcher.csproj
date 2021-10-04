@@ -53,6 +53,7 @@
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\SettingsNotFoundException.cs" />
+    <Compile Include="Models\ItemsLoader.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="SearcherModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

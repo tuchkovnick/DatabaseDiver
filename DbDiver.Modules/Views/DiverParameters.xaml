@@ -59,6 +59,8 @@
             <TextBox Text="{Binding SearchItem, UpdateSourceTrigger=PropertyChanged}" ToolTip="Search item"/>
             <TextBox Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" ToolTip="Description"/>
             <Button Height="20" Width="100" Command="{Binding AddItemCommand}" Content="Add"/>
+            <Button Height="20" Width="100" Command="{Binding LoadItemsCommand}" Content="Load"/>
+            <Button Height="20" Width="100" Command="{Binding SaveItemsCommand}" Content="Save"/>
         </StackPanel>
         <Button Grid.Row="3" Content="Dive" Command="{Binding DiveCommand}" HorizontalAlignment="Left" Margin="225,5,5,5"/>
     </Grid>
