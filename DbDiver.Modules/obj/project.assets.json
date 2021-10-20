@@ -428,11 +428,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tuchk\\Source\\Repos\\DatabaseDiver\\DbDiver.Modules\\DbDiver.Modules.Searcher.csproj",
+      "projectUniqueName": "C:\\Users\\tuchk\\source\\repos\\DatabaseDiver\\DbDiver.Modules\\DbDiver.Modules.Searcher.csproj",
       "projectName": "DbDiver.Modules.Searcher",
-      "projectPath": "C:\\Users\\tuchk\\Source\\Repos\\DatabaseDiver\\DbDiver.Modules\\DbDiver.Modules.Searcher.csproj",
+      "projectPath": "C:\\Users\\tuchk\\source\\repos\\DatabaseDiver\\DbDiver.Modules\\DbDiver.Modules.Searcher.csproj",
       "packagesPath": "C:\\Users\\tuchk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tuchk\\Source\\Repos\\DatabaseDiver\\DbDiver.Modules\\obj\\",
+      "outputPath": "C:\\Users\\tuchk\\source\\repos\\DatabaseDiver\\DbDiver.Modules\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -455,14 +455,14 @@
       "frameworks": {
         "net472": {
           "projectReferences": {
-            "C:\\Users\\tuchk\\Source\\Repos\\DatabaseDiver\\DbDiver.Business\\DbDiver.Business.csproj": {
-              "projectPath": "C:\\Users\\tuchk\\Source\\Repos\\DatabaseDiver\\DbDiver.Business\\DbDiver.Business.csproj"
+            "C:\\Users\\tuchk\\source\\repos\\DatabaseDiver\\DbDiver.Business\\DbDiver.Business.csproj": {
+              "projectPath": "C:\\Users\\tuchk\\source\\repos\\DatabaseDiver\\DbDiver.Business\\DbDiver.Business.csproj"
             },
-            "C:\\Users\\tuchk\\Source\\Repos\\DatabaseDiver\\DbDiver.Core\\DbDiver.Core.csproj": {
-              "projectPath": "C:\\Users\\tuchk\\Source\\Repos\\DatabaseDiver\\DbDiver.Core\\DbDiver.Core.csproj"
+            "C:\\Users\\tuchk\\source\\repos\\DatabaseDiver\\DbDiver.Core\\DbDiver.Core.csproj": {
+              "projectPath": "C:\\Users\\tuchk\\source\\repos\\DatabaseDiver\\DbDiver.Core\\DbDiver.Core.csproj"
             },
-            "C:\\Users\\tuchk\\Source\\Repos\\DatabaseDiver\\DbDiver.DAL\\DbDiver.DAL.csproj": {
-              "projectPath": "C:\\Users\\tuchk\\Source\\Repos\\DatabaseDiver\\DbDiver.DAL\\DbDiver.DAL.csproj"
+            "C:\\Users\\tuchk\\source\\repos\\DatabaseDiver\\DbDiver.DAL\\DbDiver.DAL.csproj": {
+              "projectPath": "C:\\Users\\tuchk\\source\\repos\\DatabaseDiver\\DbDiver.DAL\\DbDiver.DAL.csproj"
             }
           }
         }

@@ -18,10 +18,10 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="6*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0"
                   ItemsSource="{Binding SearchParameters, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
@@ -47,7 +47,7 @@
         </DataGrid>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left">
             <Label Content="Path to database:" Height="25" Width="100" Margin="5"/>
-            <TextBox Text="{Binding DatabasePath}" Width="210" Height="20" Margin="5"/>
+            <TextBox Text="{Binding DatabasePath, UpdateSourceTrigger=PropertyChanged}" Width="210" Height="20" Margin="5"/>
             <Button Content="Browse" Command="{Binding BrowseCommand}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" 

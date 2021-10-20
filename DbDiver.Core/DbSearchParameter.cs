@@ -15,14 +15,19 @@ namespace DbDiver.Core
         private string _searchItem;
         private string _description;
         private string _status = "Not searched";
+        private string _firstFoundDate;
+        private string _lastFoundDate;
 
-        public DbSearchParameter() { }
-        public DbSearchParameter(string tableName, string columnName, string searchItem, string description)
+        public DbSearchParameter() {}
+
+        public DbSearchParameter(string tableName, string columnName, string searchItem, string description, string firstFoundDate, string lastFoundDate)
         {
             TableName = tableName;
             ColumnName = columnName;
             SearchItem = searchItem;
             Description = description;
+            _firstFoundDate = firstFoundDate;
+            _lastFoundDate = lastFoundDate;
         }
 
         [DisplayName("Table name")]
@@ -39,6 +44,12 @@ namespace DbDiver.Core
 
         [DisplayName("Status")]
         public string Status { get => _status; set { _status = value; OnPropertyChanged(); } }
+        
+        [DisplayName("First found")]
+        public string FirstFound { get => _firstFoundDate; set { _firstFoundDate = value; OnPropertyChanged(); } }
+        
+        [DisplayName("Last found")]
+        public string LastFound { get => _lastFoundDate; set { _lastFoundDate = value; OnPropertyChanged(); } }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)

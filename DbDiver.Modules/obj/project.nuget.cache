@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GEpUYpc15jOgZm6vcjm0vdHJwNg16scd5UcEdfM2r7GnnZ7n0aJY+Wu44QQOZuGr1+FxOhnijqAd9tmgF4uWJQ==",
+  "dgSpecHash": "1zfWVMUsN+dZJmzrqfLXTA/oxiVmgR2E55OGSyx8ApPobeS2CuO4HCGHClL5nfCGy+MLK1Vv9SLR9BwXF2Vbzg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tuchk\\Source\\Repos\\DatabaseDiver\\DbDiver.Modules\\DbDiver.Modules.Searcher.csproj",
+  "projectFilePath": "C:\\Users\\tuchk\\source\\repos\\DatabaseDiver\\DbDiver.Modules\\DbDiver.Modules.Searcher.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tuchk\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
     "C:\\Users\\tuchk\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",

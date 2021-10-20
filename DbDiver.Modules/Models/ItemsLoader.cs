@@ -31,7 +31,7 @@ namespace DbDiver.Modules.Models
                 var column = regColumn.Match(item).ToString().Replace(":", string.Empty).Replace("=>", string.Empty);
                 var search = regSearch.Match(item).ToString().Replace("=>", string.Empty).Replace("//", string.Empty);
                 var description = regDescr.Match(item).ToString().Replace("//", string.Empty);
-                result.Add(new DbSearchParameter(table, column, search, description));
+                result.Add(new DbSearchParameter(table, column, search, description, null, null));
                 
             }
             return result;

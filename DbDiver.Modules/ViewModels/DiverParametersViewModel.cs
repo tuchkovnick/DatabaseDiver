@@ -24,7 +24,10 @@ namespace DbDiver.Modules.ViewModels
         public string DatabasePath
         {
             get { return _databasePath; }
-            set { SetProperty(ref _databasePath, value); }
+            set { 
+                SetProperty(ref _databasePath, value);
+                DiveCommand.RaiseCanExecuteChanged();
+            }
         }
 
         private string _tableName;
@@ -73,7 +76,7 @@ namespace DbDiver.Modules.ViewModels
         public DiverParametersViewModel(IEventAggregator eventAggregator)
         {
             AddItemCommand = new DelegateCommand(AddItem, CanBeAdded);
-            DiveCommand = new DelegateCommand(Dive);
+            DiveCommand = new DelegateCommand(Dive, CanPerformDive);
             SearchParameters = new ObservableCollection<DbSearchParameter>();
             BrowseCommand = new DelegateCommand(BrowseSqlFile);
             SaveItemsCommand = new DelegateCommand(SaveItems);
@@ -90,6 +93,10 @@ namespace DbDiver.Modules.ViewModels
             {
                 MessageBox.Show("Settings file not found");
             }
+            catch
+            {
+                MessageBox.Show("Settings loading error");
+            }
             SetStatusNotSearched();
             _eventAggregator = eventAggregator;
         }
@@ -103,7 +110,7 @@ namespace DbDiver.Modules.ViewModels
 
         private void AddItem()
         {
-            SearchParameters.Add(new DbSearchParameter(ColumnName, TableName, SearchItem, Description));
+            SearchParameters.Add(new DbSearchParameter(ColumnName, TableName, SearchItem, Description, null, null));
         }
 
         private void BrowseSqlFile()
@@ -143,7 +150,19 @@ namespace DbDiver.Modules.ViewModels
                     try
                     {
                         bool paramFound = DbSearcher.CheckValueExist(parameter, connectionString);
-                        parameter.Status = paramFound ? SearchStausMessages.FoundMessage : SearchStausMessages.NotFoundMessage;
+                        if (paramFound)
+                        {
+                            parameter.Status = SearchStausMessages.FoundMessage;
+                            parameter.LastFound = DateTime.Now.ToString();
+                            if(parameter.FirstFound == null)
+                            {
+                                parameter.FirstFound = DateTime.Now.ToString();
+                            }
+                        }
+                        else
+                        {
+                            parameter.Status = SearchStausMessages.NotFoundMessage;
+                        }
                     }
                     catch
                     {
@@ -155,6 +174,10 @@ namespace DbDiver.Modules.ViewModels
             _eventAggregator.GetEvent<ProgramStoppedEvent>().Publish();
         }
 
+        public bool CanPerformDive()
+        {
+            return DatabasePath.Length > 0;
+        }
 
         private void LoadItems()
         {

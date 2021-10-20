@@ -8,12 +8,12 @@
         xmlns:core="clr-namespace:DbDiver.Core;assembly=DbDiver.Core"
         mc:Ignorable="d"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="Database diver" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Database diver" Height="450" Width="800" ResizeMode="CanResize">
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="90*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <ContentControl Grid.Row="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.MenuRegion}"/>
         <ContentControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}"/>

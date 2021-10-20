@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\tuchk\Source\Repos\DatabaseDiver\DbDiver.Modules\obj\Debug\
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\obj\Debug\
 DbDiver.Modules
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 41462121444
 
 151974516455
-201232813345
+20-1141717032
 AboutWindow.xaml;Views\DiverParameters.xaml;Views\Menu.xaml;Views\Progress.xaml;
 
 False
