@@ -157,6 +157,7 @@ namespace DbDiver.Modules.ViewModels
                             if(parameter.FirstFound == null)
                             {
                                 parameter.FirstFound = DateTime.Now.ToString();
+                                RaisePropertyChanged("SearchParameters");
                             }
                         }
                         else
