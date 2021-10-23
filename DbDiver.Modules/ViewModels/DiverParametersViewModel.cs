@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace DbDiver.Modules.ViewModels
@@ -138,43 +139,47 @@ namespace DbDiver.Modules.ViewModels
 
         public ObservableCollection<DbSearchParameter> SearchParameters { set; get; }
 
-        public void Dive()
+        public async void Dive()
         {
-            _eventAggregator.GetEvent<ProgramStartedEvent>().Publish();
-            if (!String.IsNullOrEmpty(DatabasePath))
-            {
-                var connectionString = $"Data Source = {DatabasePath};";
-        
-                foreach(var parameter in SearchParameters)
-                {
-                    try
-                    {
-                        bool paramFound = DbSearcher.CheckValueExist(parameter, connectionString);
-                        if (paramFound)
-                        {
-                            parameter.Status = SearchStausMessages.FoundMessage;
-                            parameter.LastFound = DateTime.Now.ToString();
-                            if(parameter.FirstFound == null)
-                            {
-                                parameter.FirstFound = DateTime.Now.ToString();
-                                RaisePropertyChanged("SearchParameters");
-                            }
-                        }
-                        else
-                        {
-                            parameter.Status = SearchStausMessages.NotFoundMessage;
-                        }
-                    }
-                    catch
-                    {
-                        parameter.Status = SearchStausMessages.ErrorMessage;
-                    }
-                }
-            }
-            RaisePropertyChanged("SearchParameters");
-            _eventAggregator.GetEvent<ProgramStoppedEvent>().Publish();
-        }
+           await Task.Run(() =>
+           {
+               _eventAggregator.GetEvent<SearchStartedEvent>().Publish(SearchParameters.Count);
+               if (!String.IsNullOrEmpty(DatabasePath))
+               {
+                   var connectionString = $"Data Source = {DatabasePath};";
 
+                   foreach (var parameter in SearchParameters)
+                   {
+                       try
+                       {
+                           bool paramFound = DbSearcher.CheckValueExist(parameter, connectionString);
+                           if (paramFound)
+                           {
+                               parameter.Status = SearchStausMessages.FoundMessage;
+                               parameter.LastFound = DateTime.Now.ToString();
+                               if (parameter.FirstFound == null)
+                               {
+                                   parameter.FirstFound = DateTime.Now.ToString();
+                                   RaisePropertyChanged("SearchParameters");
+                               }
+                           }
+                           else
+                           {
+                               parameter.Status = SearchStausMessages.NotFoundMessage;
+                           }
+                       }
+                       catch
+                       {
+                           parameter.Status = SearchStausMessages.ErrorMessage;
+                       }
+                       _eventAggregator.GetEvent<ItemProcessedEvent>().Publish();
+                   }
+               }
+               RaisePropertyChanged("SearchParameters");
+               _eventAggregator.GetEvent<SearchFinishedEvent>().Publish();
+           });
+
+        }
         public bool CanPerformDive()
         {
             return DatabasePath.Length > 0;

@@ -3,5 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
-    <Label Content="{Binding ProgressLabelContent}"/>
+    <StackPanel Margin="5">
+        <ProgressBar Height="25" Maximum="{Binding ProgressBarMax}" Value="{Binding ProgressBarCurrentValue}"/>
+        <Label Content="{Binding ProgressLabelContent}"/>
+    </StackPanel>
+
 </UserControl>

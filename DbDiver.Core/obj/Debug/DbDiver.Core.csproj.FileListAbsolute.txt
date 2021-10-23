@@ -31,3 +31,4 @@ C:\Users\tuchk\Source\Repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.cs
 C:\Users\tuchk\Source\Repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.csproj.CopyComplete
 C:\Users\tuchk\Source\Repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.dll
 C:\Users\tuchk\Source\Repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.pdb
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.csproj.AssemblyReference.cache

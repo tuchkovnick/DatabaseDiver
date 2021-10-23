@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DbDiver.Core.Events
 {
-    public class ProgramStartedEvent : PubSubEvent
+    public class SearchStartedEvent : PubSubEvent<int>
     {
     }
 }

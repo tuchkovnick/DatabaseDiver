@@ -12,6 +12,20 @@ namespace DbDiver.Modules.ViewModels
     {
         private string _progressLabelContent;
         private IEventAggregator _eventAggregtor;
+        private int _progressBarMax = 100;
+        private int _progressBarCurrentValue = 0;
+
+        public int ProgressBarMax
+        {
+            get { return _progressBarMax; }
+            set { SetProperty(ref _progressBarMax, value); }
+        }
+
+        public int ProgressBarCurrentValue
+        {
+            get { return _progressBarCurrentValue; }
+            set { SetProperty(ref _progressBarCurrentValue, value); }
+        }
 
         public string ProgressLabelContent
         {
@@ -22,18 +36,22 @@ namespace DbDiver.Modules.ViewModels
         public ProgressViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregtor = eventAggregator;
-            _eventAggregtor.GetEvent<ProgramStartedEvent>().Subscribe(Started);
-            _eventAggregtor.GetEvent<ProgramStoppedEvent>().Subscribe(Stopped);
+            _eventAggregtor.GetEvent<SearchStartedEvent>().Subscribe(Started);
+            _eventAggregtor.GetEvent<SearchFinishedEvent>().Subscribe(Stopped);
+            _eventAggregtor.GetEvent<ItemProcessedEvent>().Subscribe(()=> { ProgressBarCurrentValue += 1; });
+
         }
 
-        public void Started()
+        public void Started(int maxValue)
         {
             ProgressLabelContent = "Started";
+            ProgressBarMax = maxValue;
         }
 
         public void Stopped()
         {
             ProgressLabelContent = "Search completed";
+            ProgressBarCurrentValue = 0;
         }
     }
 }
