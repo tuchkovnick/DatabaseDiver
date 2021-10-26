@@ -8,8 +8,8 @@
       <SearchItem>Nick</SearchItem>
       <Description>Description1</Description>
       <Status>Found</Status>
-      <FirstFound>20.10.2021 21:50:43</FirstFound>
-      <LastFound>23.10.2021 21:49:11</LastFound>
+      <FirstFound>26.10.2021 22:23:37</FirstFound>
+      <LastFound>26.10.2021 22:24:17</LastFound>
     </DbSearchParameter>
     <DbSearchParameter>
       <TableName>NewUsers</TableName>
@@ -17,8 +17,8 @@
       <SearchItem>Ivanov</SearchItem>
       <Description>Description2</Description>
       <Status>Found</Status>
-      <FirstFound>20.10.2021 21:50:43</FirstFound>
-      <LastFound>23.10.2021 21:49:11</LastFound>
+      <FirstFound>26.10.2021 22:23:37</FirstFound>
+      <LastFound>26.10.2021 22:24:17</LastFound>
     </DbSearchParameter>
     <DbSearchParameter>
       <TableName>NewUsers</TableName>
@@ -26,6 +26,8 @@
       <SearchItem>Vasya</SearchItem>
       <Description>Description3</Description>
       <Status>Not found</Status>
+      <FirstFound />
+      <LastFound />
     </DbSearchParameter>
     <DbSearchParameter>
       <TableName>UnexistedUsers</TableName>
@@ -33,6 +35,8 @@
       <SearchItem>Peter</SearchItem>
       <Description>Description4</Description>
       <Status>Error</Status>
+      <FirstFound />
+      <LastFound />
     </DbSearchParameter>
     <DbSearchParameter>
       <TableName>NewUsers</TableName>
@@ -40,6 +44,8 @@
       <SearchItem>Vasyanya</SearchItem>
       <Description>Description7</Description>
       <Status>Not found</Status>
+      <FirstFound />
+      <LastFound />
     </DbSearchParameter>
   </Parameters>
 </Settings>

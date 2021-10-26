@@ -157,7 +157,7 @@ namespace DbDiver.Modules.ViewModels
                            {
                                parameter.Status = SearchStausMessages.FoundMessage;
                                parameter.LastFound = DateTime.Now.ToString();
-                               if (parameter.FirstFound == null)
+                               if (string.IsNullOrEmpty(parameter.FirstFound))
                                {
                                    parameter.FirstFound = DateTime.Now.ToString();
                                    RaisePropertyChanged("SearchParameters");

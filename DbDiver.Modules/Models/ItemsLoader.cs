@@ -19,20 +19,23 @@ namespace DbDiver.Modules.Models
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.ShowDialog();
             var filePath = ofd.FileName;
-            var itemsStr = File.ReadAllLines(filePath);
+            var items = File.ReadAllLines(filePath);
             var result = new ObservableCollection<DbSearchParameter>();
-            var regTable = new Regex($".*:");
-            var regColumn = new Regex($":.*=>");
-            var regSearch = new Regex($"=>.*//");
             var regDescr = new Regex($"//.*");
-            foreach (var item in itemsStr)
+
+            for(int i = 0; i < items.Length; i++)
             {
-                var table = regTable.Match(item).ToString().Replace(":", string.Empty);
-                var column = regColumn.Match(item).ToString().Replace(":", string.Empty).Replace("=>", string.Empty);
-                var search = regSearch.Match(item).ToString().Replace("=>", string.Empty).Replace("//", string.Empty);
-                var description = regDescr.Match(item).ToString().Replace("//", string.Empty);
-                result.Add(new DbSearchParameter(table, column, search, description, null, null));
-                
+                var descrMatch = regDescr.Match(items[i]).ToString();
+                var description = descrMatch.Replace("//", string.Empty);
+                items[i] = items[i].Replace(descrMatch, string.Empty);
+
+                var splittedItem = items[i].Split('|');
+                var table = splittedItem[0];
+                var column = splittedItem[1];
+                var search = splittedItem[2];
+                var firstFound = splittedItem[3];
+                var lastFound = splittedItem[4];
+                result.Add(new DbSearchParameter(table, column, search, description, firstFound, lastFound));                
             }
             return result;
         }
@@ -47,9 +50,9 @@ namespace DbDiver.Modules.Models
                 var itemsStr = new List<string>();
                 foreach (var item in searchParameters)
                 {
-                    itemsStr.Add($"{item.TableName}:{item.ColumnName}=>{item.SearchItem}//{item.Description}");
+                    itemsStr.Add($"{item.TableName}|{item.ColumnName}|{item.SearchItem}|{item.FirstFound}|{item.LastFound}//{item.Description}");
                 }
-                File.AppendAllLines(filePath, itemsStr);
+                File.WriteAllLines(filePath, itemsStr);
             }
             catch(Exception e)
             {
