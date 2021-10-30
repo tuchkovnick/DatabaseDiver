@@ -21,7 +21,7 @@ namespace DbDiver.DAL
                 SQLitePCL.Batteries.Init();
                 connection.Open();
                 
-               var sqlExpression = $"SELECT * FROM {parameter.TableName} WHERE {parameter.ColumnName} LIKE '{parameter.SearchItem}'";
+               var sqlExpression = $"SELECT 1 FROM {parameter.TableName} WHERE {parameter.ColumnName} LIKE '%{parameter.SearchItem}%'";
                SqliteCommand command = new SqliteCommand(sqlExpression, connection);
                SqliteDataReader reader = command.ExecuteReader();
 
