@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace DbDiver.Modules.ViewModels
 {
@@ -114,6 +115,7 @@ namespace DbDiver.Modules.ViewModels
             SearchParameters.Add(new DbSearchParameter(ColumnName, TableName, SearchItem, Description, null, null));
         }
 
+
         private void BrowseSqlFile()
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -138,6 +140,7 @@ namespace DbDiver.Modules.ViewModels
         public DelegateCommand SaveItemsCommand { get; private set; }
 
         public ObservableCollection<DbSearchParameter> SearchParameters { set; get; }
+        public ObservableCollection<string> LogItems { set; get; } = new ObservableCollection<string>();
 
         public async void Dive()
         {
@@ -146,34 +149,11 @@ namespace DbDiver.Modules.ViewModels
                _eventAggregator.GetEvent<SearchStartedEvent>().Publish(SearchParameters.Count);
                if (!String.IsNullOrEmpty(DatabasePath))
                {
+                   AddLogMessage($"program started");
                    var connectionString = $"Data Source = {DatabasePath};";
-
-                   foreach (var parameter in SearchParameters)
-                   {
-                       try
-                       {
-                           bool paramFound = DbSearcher.CheckValueExist(parameter, connectionString);
-                           if (paramFound)
-                           {
-                               parameter.Status = SearchStausMessages.FoundMessage;
-                               parameter.LastFound = DateTime.Now.ToString();
-                               if (string.IsNullOrEmpty(parameter.FirstFound))
-                               {
-                                   parameter.FirstFound = DateTime.Now.ToString();
-                                   RaisePropertyChanged("SearchParameters");
-                               }
-                           }
-                           else
-                           {
-                               parameter.Status = SearchStausMessages.NotFoundMessage;
-                           }
-                       }
-                       catch
-                       {
-                           parameter.Status = SearchStausMessages.ErrorMessage;
-                       }
-                       _eventAggregator.GetEvent<ItemProcessedEvent>().Publish();
-                   }
+                   var databaseSearcher = new DatabaseSearcher(_eventAggregator, connectionString); 
+                   int foundCount = databaseSearcher.InspectValues(SearchParameters, AddLogMessage);
+                   AddLogMessage($"program finished with {foundCount} found values");
                }
                RaisePropertyChanged("SearchParameters");
                _eventAggregator.GetEvent<SearchFinishedEvent>().Publish();
@@ -202,6 +182,18 @@ namespace DbDiver.Modules.ViewModels
             {
                 v.Status = "Not searched";
             }
+        }
+
+        public void AddLogMessage(string message)
+        {
+            Application.Current.Dispatcher.Invoke(
+            () =>
+            {
+                LogItems.Add($"{DateTime.Now}: {message}");
+                RaisePropertyChanged("LogItems");
+            }
+            );        
+
         }
     }
 }

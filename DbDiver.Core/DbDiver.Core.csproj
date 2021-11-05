@@ -45,10 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbSearchParameter.cs" />
+    <Compile Include="Events\ValueFoundEvent.cs" />
     <Compile Include="Events\ItemProcessedEvent.cs" />
     <Compile Include="Events\SearchFinishedEvent.cs" />
     <Compile Include="Events\SearchStartedEvent.cs" />
-    <Compile Include="IDatabaseSearcher.cs" />
+    <Compile Include="IDatabaseItemsExtractor.cs" />
     <Compile Include="RegionNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchStausMessages.cs" />

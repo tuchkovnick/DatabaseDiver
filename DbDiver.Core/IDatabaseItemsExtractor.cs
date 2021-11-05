@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DbDiver.Core
 {
-    public interface IDatabaseSearcher
+    public interface IDatabaseItemsExtractor
     {
-        bool HasParameter(DbSearchParameter parameter);
+        IEnumerable<string> GetAllFoundValues(DbSearchParameter parameter);
     }
 }

@@ -10,6 +10,7 @@ namespace DbDiver.Core
     {
         public const string MenuRegion = "MenuRegion";
         public const string ContentRegion = "ContentRegion";
-        public const string ProgressRegion = "ProgressRegion";
+        public const string ProgressRegion = "ProgressRegion"; 
+        public const string LogRegion = "LogRegion";
     }
 }

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbDiver.Business", "DbDiver
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbDiver.DAL", "DbDiver.DAL\DbDiver.DAL.csproj", "{2E37563A-B0F0-4B50-BD5F-7EFB370509BC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{D13E4471-56AE-4E49-9F41-BD75D3CAEBEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0ACC4F67-18DB-4339-83EF-F27E0A6701AE} = {D13E4471-56AE-4E49-9F41-BD75D3CAEBEC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81621CEC-0C6E-4607-B977-F118497820C1}

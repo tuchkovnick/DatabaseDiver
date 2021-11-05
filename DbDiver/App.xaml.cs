@@ -13,7 +13,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using DbDiver.DAL;
 using DbDiver.Core;
-
 namespace DbDiver
 {
     /// <summary>
@@ -28,7 +27,7 @@ namespace DbDiver
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.Register<IDatabaseSearcher, DatabaseSearcher>();
+            containerRegistry.Register<IDatabaseItemsExtractor, DatabaseItemsExtractor>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
