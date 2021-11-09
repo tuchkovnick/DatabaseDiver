@@ -35,11 +35,12 @@ namespace DbDiver.DAL
                 StringBuilder rowPresentation = new StringBuilder();
                 for (int i = 0; i < reader.FieldCount; i++)
                 {
-                    rowPresentation.Append($"[{reader.GetName(i)}]:{reader.GetString(i)} ");
+                    if(!Convert.IsDBNull(reader.GetName(i)) && !Convert.IsDBNull(reader.GetValue(i)))
+                        rowPresentation.Append($"[{reader.GetName(i)}]:{reader.GetValue(i)} ");
                 }
                 result.Add(rowPresentation.ToString());
             }
-            return result;               
+            return result;
         }
     }
 }

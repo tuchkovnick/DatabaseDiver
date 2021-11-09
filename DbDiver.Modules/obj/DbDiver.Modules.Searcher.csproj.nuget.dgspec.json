@@ -101,6 +101,10 @@
       "frameworks": {
         "net472": {
           "dependencies": {
+            "MahApps.Metro": {
+              "target": "Package",
+              "version": "[2.4.9, )"
+            },
             "Prism.Wpf": {
               "target": "Package",
               "version": "[8.1.97, )"

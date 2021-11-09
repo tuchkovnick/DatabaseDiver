@@ -53,11 +53,13 @@ namespace DbDiver.Business
                     }
 
                 }
-                catch
+                catch (Exception exc)
                 {
                     parameter.Status = SearchStausMessages.ErrorMessage;
+                   AddLogMessage($"Exception while searching '{parameter.SearchItem}' in [{parameter.TableName}]:[{parameter.ColumnName}] : {exc.Message}");
+
                 }
-                _eventAggregator.GetEvent<ItemProcessedEvent>().Publish();               
+                _eventAggregator.GetEvent<ItemProcessedEvent>().Publish();         
             }
             return foundCounter;
         }

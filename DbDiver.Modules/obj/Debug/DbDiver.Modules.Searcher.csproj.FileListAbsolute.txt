@@ -100,6 +100,11 @@ C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\runtimes\win
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\runtimes\win-arm\native\e_sqlite3.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\DbDiver.Modules.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\DbDiver.Modules.pdb
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\ControlzEx.dll
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\ControlzEx.pdb
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\MahApps.Metro.dll
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\MahApps.Metro.pdb
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\de\MahApps.Metro.resources.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\Microsoft.Xaml.Behaviors.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Modules\bin\Debug\Prism.dll

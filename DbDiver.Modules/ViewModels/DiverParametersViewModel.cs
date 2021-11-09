@@ -189,7 +189,8 @@ namespace DbDiver.Modules.ViewModels
             Application.Current.Dispatcher.Invoke(
             () =>
             {
-                LogItems.Add($"{DateTime.Now}: {message}");
+                string dot = message.EndsWith(".") ? string.Empty : ".";
+                LogItems.Add($"{DateTime.Now}: {message}{dot}");
                 RaisePropertyChanged("LogItems");
             }
             );        

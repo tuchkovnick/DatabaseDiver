@@ -131,6 +131,7 @@ C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\ControlzEx.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\DbDiver.Core.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\DbDiver.DAL.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\DbDiver.Modules.dll
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\MahApps.Metro.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\Microsoft.Xaml.Behaviors.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\Prism.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\Prism.Unity.Wpf.dll
@@ -154,6 +155,8 @@ C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\DbDiver.DAL.dll.conf
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\DbDiver.Modules.pdb
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\ControlzEx.pdb
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\ControlzEx.xml
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\MahApps.Metro.pdb
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\MahApps.Metro.xml
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\Prism.pdb
@@ -171,11 +174,13 @@ C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\DbDiver.Business.pdb
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\System.Memory.xml
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\System.Buffers.xml
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\bin\Debug\de\MahApps.Metro.resources.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\obj\Debug\DbDiver.csproj.AssemblyReference.cache
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\obj\Debug\Views\MainWindow.g.cs
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\obj\Debug\App.g.cs
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\obj\Debug\DbDiver_MarkupCompile.cache
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\obj\Debug\DbDiver_MarkupCompile.lref
+C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\obj\Debug\App.baml
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\obj\Debug\Views\MainWindow.baml
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\obj\Debug\DbDiver.g.resources
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver\obj\Debug\DbDiver.Properties.Resources.resources
