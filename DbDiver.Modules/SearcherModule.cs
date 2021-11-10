@@ -4,7 +4,7 @@ using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 
-//searcher module
+//searcher module//
 namespace DbDiver.Modules.Searcher
 {
     public class SearcherModule : IModule
