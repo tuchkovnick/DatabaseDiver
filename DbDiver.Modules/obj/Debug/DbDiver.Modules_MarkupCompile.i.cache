@@ -16,5 +16,5 @@ DEBUG;TRACE
 25-183825356
 AboutWindow.xaml;Views\DiverParameters.xaml;Views\Menu.xaml;Views\Progress.xaml;
 
-False
+True
 

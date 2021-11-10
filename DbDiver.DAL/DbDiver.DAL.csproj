@@ -75,7 +75,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseItemsExtractor.cs" />
+    <Compile Include="MSSqlItemsExtractor.cs" />
+    <Compile Include="SqliteItemsExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

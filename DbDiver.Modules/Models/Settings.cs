@@ -15,14 +15,16 @@ namespace DbDiver.Modules.Models
     public class Settings
     {
         public string DatabasePath { set; get; }
+        public int SelectedDatabaseIdx { set; get; }
         public ObservableCollection<DbSearchParameter> Parameters { set; get; }        
         string _settingsPath = $"{Directory.GetCurrentDirectory()}\\settings.xml";
         
         public Settings(ObservableCollection<DbSearchParameter> parameters,
-            string databasePath)
+            string databasePath, int selectedDatabaseIdx)
         {
             Parameters = parameters;
             DatabasePath = databasePath;
+            SelectedDatabaseIdx = selectedDatabaseIdx;
         }
 
         public Settings()
@@ -49,6 +51,7 @@ namespace DbDiver.Modules.Models
                     {
                         Parameters = loadedSettings.Parameters;
                         DatabasePath = loadedSettings.DatabasePath;
+                        SelectedDatabaseIdx = loadedSettings.SelectedDatabaseIdx;
                     }
                 }
             }

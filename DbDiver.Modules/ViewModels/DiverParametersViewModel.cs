@@ -22,7 +22,16 @@ namespace DbDiver.Modules.ViewModels
     public class DiverParametersViewModel : BindableBase
     {
         private string _databasePath;
-
+        private int _selectedDatabaseIdx;
+        public int SelectedDatabaseIdx
+        {
+            get { return _selectedDatabaseIdx; }
+            set
+            {
+                SetProperty(ref _selectedDatabaseIdx, value);
+            }
+        }
+        
         public string DatabasePath
         {
             get { return _databasePath; }
@@ -89,6 +98,7 @@ namespace DbDiver.Modules.ViewModels
                 settings.Load();
                 SearchParameters = settings.Parameters;
                 DatabasePath = settings.DatabasePath;
+                SelectedDatabaseIdx = settings.SelectedDatabaseIdx;
 
             }
             catch (SettingsNotFoundException)
@@ -105,7 +115,7 @@ namespace DbDiver.Modules.ViewModels
 
         ~DiverParametersViewModel()
         {
-            Settings settings = new Settings(SearchParameters, DatabasePath);
+            Settings settings = new Settings(SearchParameters, DatabasePath, SelectedDatabaseIdx);
             settings.Save();
             
         }
@@ -147,12 +157,37 @@ namespace DbDiver.Modules.ViewModels
            await Task.Run(() =>
            {
                _eventAggregator.GetEvent<SearchStartedEvent>().Publish(SearchParameters.Count);
+               int foundCount = 0;
                if (!String.IsNullOrEmpty(DatabasePath))
                {
                    AddLogMessage($"program started");
-                   var connectionString = $"Data Source = {DatabasePath};";
-                   var databaseSearcher = new DatabaseSearcher(_eventAggregator, connectionString); 
-                   int foundCount = databaseSearcher.InspectValues(SearchParameters, AddLogMessage);
+
+                   IDatabaseItemsExtractor databaseItemsExtractor = null;
+                   try
+                   {
+                       switch (SelectedDatabaseIdx)
+                       {
+                           case 0:
+                               {
+                                   databaseItemsExtractor = new SqliteItemsExtractor($"Data Source = {DatabasePath};"); break;
+                               };
+                           case 1:
+                               {
+                                   var database = Path.GetFileName(DatabasePath);
+                                   var server = Path.GetDirectoryName(DatabasePath);
+                                   databaseItemsExtractor = new MSSqlItemsExtractor($"Server={server};Database={database};");
+                                   break;
+                               };
+                       };
+                       var databaseSearcher = new DatabaseSearcher(_eventAggregator, databaseItemsExtractor);
+                       foundCount = databaseSearcher.InspectValues(SearchParameters, AddLogMessage);
+                   }
+                   catch (Exception exc)
+                   {
+                       MessageBox.Show($"Error database initialization: {exc.Message}");
+                       AddLogMessage($"Error database initialization: {exc.Message}");
+                   }
+                  
                    AddLogMessage($"program finished with {foundCount} found values");
                }
                RaisePropertyChanged("SearchParameters");

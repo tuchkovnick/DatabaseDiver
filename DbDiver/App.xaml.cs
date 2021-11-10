@@ -27,7 +27,7 @@ namespace DbDiver
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.Register<IDatabaseItemsExtractor, DatabaseItemsExtractor>();
+            containerRegistry.Register<IDatabaseItemsExtractor, SqliteItemsExtractor>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

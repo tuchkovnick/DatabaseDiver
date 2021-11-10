@@ -14,11 +14,11 @@ namespace DbDiver.Business
     public class DatabaseSearcher : BindableBase
     {
         IEventAggregator _eventAggregator;
-        DatabaseItemsExtractor _databaseItemsExtractor;
-        public DatabaseSearcher(IEventAggregator eventAggregator, string connectionString)
+        IDatabaseItemsExtractor _databaseItemsExtractor;
+        public DatabaseSearcher(IEventAggregator eventAggregator, IDatabaseItemsExtractor databaseItemsExtractor)
         {
             _eventAggregator = eventAggregator;
-            _databaseItemsExtractor = new DatabaseItemsExtractor(connectionString);
+            _databaseItemsExtractor = databaseItemsExtractor;
         }
 
         public int InspectValues(IEnumerable<DbSearchParameter> SearchParameters, Action<string> AddLogMessage)

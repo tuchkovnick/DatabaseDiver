@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <DatabasePath>D:\TestDatabase\DbDiverTest.db</DatabasePath>
+  <SelectedDatabaseIdx>0</SelectedDatabaseIdx>
   <Parameters>
     <DbSearchParameter>
       <TableName>Users</TableName>
@@ -9,16 +10,16 @@
       <Description>Description1</Description>
       <Status>Found</Status>
       <FirstFound>26.10.2021 22:23:37</FirstFound>
-      <LastFound>10.11.2021 0:12:20</LastFound>
+      <LastFound>10.11.2021 22:46:51</LastFound>
     </DbSearchParameter>
     <DbSearchParameter>
-      <TableName>NewUsers</TableName>
+      <TableName>dbo.Users</TableName>
       <ColumnName>LastName</ColumnName>
       <SearchItem>Ivanov</SearchItem>
       <Description>Description2</Description>
-      <Status>Found</Status>
+      <Status>Error</Status>
       <FirstFound>26.10.2021 22:23:37</FirstFound>
-      <LastFound>10.11.2021 0:12:20</LastFound>
+      <LastFound>10.11.2021 21:41:09</LastFound>
     </DbSearchParameter>
     <DbSearchParameter>
       <TableName>NewUsers</TableName>

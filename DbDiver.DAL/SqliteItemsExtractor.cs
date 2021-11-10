@@ -1,25 +1,23 @@
 ﻿using DbDiver.Core;
-using DbDiver.Core.Events;
-using Microsoft.Data.Sqlite;
-using Prism.Events;
-using Prism;
 using System;
 using System.Collections.Generic;
+using System.Data.Sql;
+using System.Data.SqlClient;
 using System.Text;
 
 namespace DbDiver.DAL
 {
-    public class DatabaseItemsExtractor : IDatabaseItemsExtractor
+    public class MSSqlItemsExtractor : IDatabaseItemsExtractor
     {
 
         string _connectionString;
-        SqliteConnection _connection;
+        SqlConnection _connection;
 
-        public DatabaseItemsExtractor(string connectionString)
+        public MSSqlItemsExtractor(string connectionString)
         {
             _connectionString = connectionString;
-            _connection = new SqliteConnection(_connectionString);
-            SQLitePCL.Batteries.Init();
+            _connection = new SqlConnection(_connectionString);
+            
             _connection.Open();
         }
 
@@ -28,8 +26,8 @@ namespace DbDiver.DAL
         {
             List<string> result = new List<string>();
             var sqlExpression = $"SELECT * FROM {parameter.TableName} WHERE {parameter.ColumnName} LIKE '%{parameter.SearchItem}%'";
-            SqliteCommand command = new SqliteCommand(sqlExpression, _connection);
-            SqliteDataReader reader = command.ExecuteReader();            
+            SqlCommand command = new SqlCommand(sqlExpression, _connection);
+            SqlDataReader reader = command.ExecuteReader();            
             while (reader.Read())
             {
                 StringBuilder rowPresentation = new StringBuilder();

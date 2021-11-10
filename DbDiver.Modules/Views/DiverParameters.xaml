@@ -24,6 +24,11 @@
             <Setter Property="BorderBrush" Value="Gray"/>
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource MahApps.Styles.ComboBox}">
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
         <Style TargetType="DataGrid">
             <Setter Property="Background" Value="LightGray"/>
         </Style>
@@ -72,6 +77,10 @@
                         <Label Content="Path to database:" Height="25" Width="100" Margin="5"/>
                         <TextBox Text="{Binding DatabasePath, UpdateSourceTrigger=PropertyChanged}" Width="210" Height="20" Margin="5"/>
                         <Button Content="Browse" Command="{Binding BrowseCommand}"/>
+                        <ComboBox SelectedIndex="{Binding SelectedDatabaseIdx}">
+                            <ComboBoxItem Content="Sqlite"/>
+                            <ComboBoxItem Content="MSSql"/>
+                        </ComboBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
                     DockPanel.Dock="Bottom" 
