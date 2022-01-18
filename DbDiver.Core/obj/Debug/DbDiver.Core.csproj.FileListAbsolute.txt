@@ -8,3 +8,13 @@ C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.cs
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.csproj.CopyComplete
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.dll
 C:\Users\tuchk\source\repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.pdb
+C:\Users\Nick\Source\Repos\DatabaseDiver\DbDiver.Core\bin\Debug\DbDiver.Core.dll
+C:\Users\Nick\Source\Repos\DatabaseDiver\DbDiver.Core\bin\Debug\DbDiver.Core.pdb
+C:\Users\Nick\Source\Repos\DatabaseDiver\DbDiver.Core\bin\Debug\Prism.dll
+C:\Users\Nick\Source\Repos\DatabaseDiver\DbDiver.Core\bin\Debug\Prism.pdb
+C:\Users\Nick\Source\Repos\DatabaseDiver\DbDiver.Core\bin\Debug\Prism.xml
+C:\Users\Nick\Source\Repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.csproj.AssemblyReference.cache
+C:\Users\Nick\Source\Repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Source\Repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.csproj.CopyComplete
+C:\Users\Nick\Source\Repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.dll
+C:\Users\Nick\Source\Repos\DatabaseDiver\DbDiver.Core\obj\Debug\DbDiver.Core.pdb

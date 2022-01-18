@@ -60,6 +60,11 @@
                         Margin="5"
                         BorderThickness="0"
                         AutoGeneratingColumn="DataGrid_AutoGeneratingColumn">
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Command="Copy" />
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
                         <DataGrid.RowStyle>
                             <Style TargetType="{x:Type DataGridRow}">
                                 <Style.Triggers>

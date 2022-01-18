@@ -197,7 +197,7 @@ namespace DbDiver.Modules.ViewModels
         }
         public bool CanPerformDive()
         {
-            return DatabasePath.Length > 0;
+            return DatabasePath?.Length > 0;
         }
 
         private void LoadItems()
