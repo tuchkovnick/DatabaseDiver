@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DbDiver.Modules"
         mc:Ignorable="d"
-        Title="About" Height="282" Width="479">
+        Title="About DatabaseDiver" Height="282" Width="479">
     <Grid Margin="5">
         <StackPanel>
             <TextBlock Text="A simple program which looks for pre-defined values in sqlite/mssql database."/>
