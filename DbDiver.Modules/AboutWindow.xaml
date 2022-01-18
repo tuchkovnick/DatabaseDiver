@@ -8,7 +8,7 @@
         Title="About" Height="282" Width="479">
     <Grid Margin="5">
         <StackPanel>
-            <TextBlock Text="A simple program which looks for pre-defined values in sqlite database."/>
+            <TextBlock Text="A simple program which looks for pre-defined values in sqlite/mssql database."/>
             <TextBlock Text="By @tuchkovnick"/>
         </StackPanel>
     </Grid>
