@@ -1,6 +1,9 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Reflection;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace DbDiver.Modules.Views
 {
@@ -12,6 +15,9 @@ namespace DbDiver.Modules.Views
         public DiverParameters()
         {
             InitializeComponent();
+            CommandBinding cb = new CommandBinding(ApplicationCommands.Copy, CopyCmdExecuted, CopyCmdCanExecute);
+
+            this.LogListBox.CommandBindings.Add(cb);
         }
 
         private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -54,6 +60,29 @@ namespace DbDiver.Modules.Views
                 }
             }
             return null;
+        }
+
+        void CopyCmdExecuted(object target, ExecutedRoutedEventArgs e)
+        {
+            ListBox lb = e.OriginalSource as ListBox;
+            string copyContent = string.Empty;
+            // The SelectedItems could be ListBoxItem instances or data bound objects depending on how you populate the ListBox.   
+            foreach (string item in lb.SelectedItems)
+            {
+                copyContent += item;
+                // Add a NewLine for carriage return   
+                copyContent += Environment.NewLine;
+            }
+            Clipboard.SetText(copyContent);
+        }
+        void CopyCmdCanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            ListBox lb = e.OriginalSource as ListBox;
+            // CanExecute only if there is one or more selected Item.   
+            if (lb.SelectedItems.Count > 0)
+                e.CanExecute = true;
+            else
+                e.CanExecute = false;
         }
     }
 }
