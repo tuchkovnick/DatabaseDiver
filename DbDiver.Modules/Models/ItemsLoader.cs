@@ -16,7 +16,7 @@ namespace DbDiver.Modules.Models
     public static class ItemsLoader
     {
         public static IEnumerable<DbSearchParameter> LoadItems()
-        {            
+        {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.ShowDialog();
             var filePath = ofd.FileName;
@@ -24,7 +24,7 @@ namespace DbDiver.Modules.Models
             var result = new ObservableCollection<DbSearchParameter>();
             var regDescr = new Regex($"//.*");
 
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 var descrMatch = regDescr.Match(items[i]).ToString();
                 var description = descrMatch.Replace("//", string.Empty);
@@ -36,7 +36,7 @@ namespace DbDiver.Modules.Models
                 var search = splittedItem[2];
                 var firstFound = splittedItem[3];
                 var lastFound = splittedItem[4];
-                result.Add(new DbSearchParameter(table, column, search, description, firstFound, lastFound));                
+                result.Add(new DbSearchParameter(table, column, search, description, firstFound, lastFound));
             }
             return result;
         }

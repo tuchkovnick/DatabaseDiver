@@ -202,13 +202,28 @@ namespace DbDiver.Modules.ViewModels
 
         private void LoadItems()
         {
-            SearchParameters = new ObservableCollection<DbSearchParameter>(ItemsLoader.LoadItems());
-            RaisePropertyChanged("SearchParameters");
+            try
+            {
+                SearchParameters = new ObservableCollection<DbSearchParameter>(ItemsLoader.LoadItems());
+                RaisePropertyChanged("SearchParameters");
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            
         }
 
         private void SaveItems()
         {
-            ItemsLoader.SaveItems(SearchParameters);
+            try
+            {
+                ItemsLoader.SaveItems(SearchParameters);
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
         }
 
         public void SetStatusNotSearched()
