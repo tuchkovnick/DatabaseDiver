@@ -107,7 +107,7 @@
       <Name>DbDiver.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\DbDiver.DAL\DbDiver.DAL.csproj">
-      <Project>{2e37563a-b0f0-4b50-bd5f-7efb370509bc}</Project>
+      <Project>{1960c9f1-7e78-438e-a8ec-9ed84a1ba192}</Project>
       <Name>DbDiver.DAL</Name>
     </ProjectReference>
   </ItemGroup>
